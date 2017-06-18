@@ -1,8 +1,20 @@
-# import unittest
+import unittest
+import criaMatriz
 
 
 matriz1 = [[1, 2, 3]]
 matriz2 = [[2, 1, 0]]
+
+
+def somaMatriz2(A, B):
+    linha = len(A)
+    coluna = len(A[0])
+    C = criaMatriz.criaMatriz(linha, coluna, 0)
+
+    for lin in range(linha):
+        for col in range(coluna):
+            C[lin][col] = A[lin][col] + B[lin][col]
+    return C
 
 
 def soma_matrizes(matriz1, matriz2):
@@ -23,14 +35,15 @@ def soma_matrizes(matriz1, matriz2):
     return matriz
 
 
-# class TestSomaMatriz(unittest.TestCase):
-#
-#    def test_equals(self):
-#        self.assertEqual(soma_matrizes(matriz1, matriz2), [[3, 3, 3]])
-#
-#   def test_not_equals(self):
-#        self.assertNotEquals(soma_matrizes(matriz1, matriz2), [[3, 3, 0]])
-#
-#
-# if __name__ == '__main__':
-#    unittest.main()
+class TestSomaMatriz(unittest.TestCase):
+
+    def test_equals(self):
+        self.assertEqual(soma_matrizes(matriz1, matriz2), [[3, 3, 3]])
+        self.assertEqual(somaMatriz2(matriz1, matriz2), [[3, 3, 3]])
+
+    def test_not_equals(self):
+        self.assertNotEqual(soma_matrizes(matriz1, matriz2), [[3, 3, 0]])
+
+
+if __name__ == '__main__':
+    unittest.main()

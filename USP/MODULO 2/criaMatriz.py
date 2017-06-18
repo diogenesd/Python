@@ -10,7 +10,3 @@ def criaMatriz(l, c, v):
         m.append(linha)
 
     return m
-
-
-m = criaMatriz(2, 3, 0)
-print(m)

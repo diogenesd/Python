@@ -1,4 +1,7 @@
 import unittest
+import matplotlib.pyplot as plt
+import numpy as np
+from math import sqrt
 
 """
 DocString for exercicio_video_semana2.py.
@@ -50,3 +53,20 @@ class TestMenorPalavra(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+def fibol(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    return fibol(n - 1) + fibol(n - 2)
+
+
+def fibol2(n):
+    return ((1 + sqrt(5)) ** n - (1 - sqrt(5))**n) / (2**n * sqrt(5))
+
+
+x = np.linspace(0, 1, 300)
+for w in range(2, 6, 2):
+    plt.plot(x, np.sin(np.pi * x) * np.sin(2 * w * np.pi * x))
