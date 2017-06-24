@@ -28,9 +28,9 @@ def busca(elements, element):
     """
 
     assert len(elements) > 0
-    if element not in elements:
-        return False
-    return True
+    if element in elements:
+        return elements.index(element)
+    return False
 
 
 # class TestListaOrdenada(unittest.TestCase):
@@ -45,13 +45,13 @@ def busca(elements, element):
 #             busca([], 1)
 
 #     def test_number_true(self):
-#         self.assertEqual(busca(self.p, 8), True)
+#         self.assertEqual(busca(self.p, 8), 7)
 
 #     def test_number_false(self):
 #         self.assertEqual(busca(self.p, -1), False)
 
 #     def test_string_true(self):
-#         self.assertEqual(busca(self.q, 'a'), True)
+#         self.assertEqual(busca(self.q, 'a'), 0)
 
 #     def test_string_false(self):
 #         self.assertEqual(busca(self.q, 'z'), False)

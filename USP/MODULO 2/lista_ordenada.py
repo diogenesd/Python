@@ -29,7 +29,7 @@ def ordenada(numbers):
 
     assert len(numbers) > 0
     small = numbers[0]
-    for i in range(len(numbers) - 1):
+    for i in range(len(numbers)):
         if numbers[i] < small:
             return False
     small = numbers[i]
@@ -52,6 +52,9 @@ def ordenada(numbers):
 
 #     def test_false(self):
 #         self.assertNotEqual(ordenada([1, 2, 3, 4, 5, 6, 7, 8, 1]), False)
+
+#     def test_one_item(self):
+#         self.assertEqual(ordenada([1]), True)
 
 
 # if __name__ == '__main__':
