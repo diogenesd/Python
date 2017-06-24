@@ -28,8 +28,9 @@ def busca(elements, element):
     """
 
     assert len(elements) > 0
-    if element in elements:
-        return elements.index(element)
+    for i in range(len(elements)):
+        if elements[i] == element:
+            return i
     return False
 
 
