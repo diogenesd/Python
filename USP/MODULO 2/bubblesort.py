@@ -63,6 +63,16 @@ def bubble_sort_short(lista):
     return lista
 
 
+def x(n):
+    if n >= 0 and n <= 2:
+        return n
+    else:
+        print("*")
+        return x(n - 1) + x(n - 2) + x(n - 3)
+
+
+print(x(6))
+
 # class TestOrdenation(unittest.TestCase):
 #     ''' It's internal class for unit test.'''
 
